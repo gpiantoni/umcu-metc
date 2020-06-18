@@ -1,0 +1,172 @@
+coevorden	14-420_adults	2	NULL	1	NULL	yes	yes	yes	NULL	yes	yes	yes	NULL	NULL
+katwijk	14-420_adults	2	NULL	1	NULL	yes	yes	yes	NULL	yes	yes	yes	NULL	HD-grid was not available
+breda	14-420_adults	2	NULL	1	NULL	no	yes	yes	NULL	yes	yes	yes	NULL	NULL
+kampen	14-420_adults	2	NULL	1	NULL	no	yes	yes	NULL	yes	yes	yes	NULL	NULL
+gennep	14-420_adults	2	NULL	1	NULL	no	NULL	NULL	NULL	yes	NULL	yes	NULL	data_sharing_institutes by phone
+arnhem	14-420_adults	2	NULL	1	NULL	no	NULL	NULL	NULL	NULL	NULL	no	NULL	NULL
+bunnik	14-420_adults	3	NULL	1	NULL	yes	yes	yes	NULL	yes	yes	yes	NULL	surgeon decided not to implant HD
+vledder	14-420_adults	3	NULL	1	NULL	yes	yes	yes	NULL	yes	yes	yes	NULL	NULL
+duiven	14-420_adults	4	NULL	1	NULL	yes	yes	yes	NULL	yes	yes	yes	NULL	NULL
+ommen	14-420_adults	3	NULL	1	NULL	yes	yes	yes	NULL	yes	yes	yes	NULL	NULL
+workum	14-420_adults	3	NULL	1	NULL	no	yes	no	NULL	no	yes	yes	NULL	fMRI only
+veendam	14-420_adults	4	NULL	1	NULL	no	yes	NULL	NULL	NULL	NULL	yes	NULL	no data acquired
+itens	14-420_adults	jk	NULL	1	NULL	no	yes	yes	NULL	yes	yes	yes	NULL	NULL
+heek	14-420_adults	6	NULL	1.1 (removed consent questions that were already answered during inform consent, and left just question about open data. This was discussed and approved by Irene Jonkers.)	NULL	no	yes	yes	NULL	yes	yes	yes	NULL	NULL
+kijkduin	14-420_adults	6	NULL	1.1	NULL	no	yes	yes	NULL	yes	NULL	yes	NULL	no data acquired
+franeker	14-420_adults	6	NULL	1.1 (Letter sent by mistake. Reply received and disagress with open data)	NULL	yes	yes	yes	NULL	yes	no	no	NULL	NULL
+beilen	14-420_adults	6	NULL	1.1	NULL	no	yes	yes	NULL	yes	yes	yes	NULL	NULL
+chaam	14-420_adults	6	NULL	1.1	NULL	no	yes	yes	NULL	yes	yes	yes	NULL	NULL
+hulst	14-420_adults	6	NULL	1.1	NULL	no	yes	yes	NULL	yes	yes	yes	NULL	NULL
+warmond	14-420_adults	NULL	NULL	NULL	NULL	yes	yes	yes	NULL	yes	yes	yes	NULL	NULL
+capelle	14-420_adults	8	NULL	NULL	NULL	yes	yes	yes	NULL	yes	yes	yes	NULL	NULL
+drouwen	14-420_adults	8	NULL	NULL	NULL	no	yes	yes	NULL	yes	yes	yes	NULL	NULL
+echten	14-420_adults	8	NULL	NULL	NULL	no	yes	yes	NULL	yes	yes	yes	NULL	NULL
+lemmer	14-420_adults	8	NULL	NULL	NULL	no	yes	yes	NULL	yes	yes	yes	NULL	NULL
+intraop_p000	14-622_intraop	NULL	NULL	NULL	NULL	yes	no	no	NULL	no	NULL	no	NULL	NULL
+intraop_p001	14-622_intraop	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL
+intraop_p002	14-622_intraop	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL
+intraop_p003	14-622_intraop	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL
+intraop_p004	14-622_intraop	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL
+intraop_p005	14-622_intraop	NULL	NULL	NULL	NULL	yes	yes	NULL	NULL	yes	NULL	yes	NULL	NULL
+intraop_p006	14-622_intraop	NULL	NULL	NULL	NULL	yes	yes	NULL	NULL	yes	NULL	yes	NULL	NULL
+intraop_p008	14-622_intraop	NULL	NULL	NULL	NULL	yes	yes	yes	NULL	yes	NULL	yes	NULL	NULL
+intraop_p009	14-622_intraop	NULL	NULL	NULL	NULL	yes	yes	yes	NULL	yes	NULL	yes	NULL	NULL
+intraop_p010	14-622_intraop	NULL	NULL	NULL	NULL	yes	yes	yes	NULL	yes	NULL	yes	NULL	NULL
+intraop_p011	14-622_intraop	NULL	NULL	NULL	NULL	yes	yes	yes	NULL	yes	NULL	yes	NULL	NULL
+intraop_p012	14-622_intraop	NULL	NULL	NULL	NULL	yes	yes	yes	NULL	yes	NULL	yes	NULL	NULL
+intraop_p013	14-622_intraop	NULL	NULL	NULL	NULL	yes	yes	yes	NULL	yes	NULL	yes	NULL	NULL
+intraop_p014	14-622_intraop	NULL	NULL	NULL	NULL	yes	yes	yes	NULL	yes	NULL	yes	NULL	NULL
+intraop_p015	14-622_intraop	NULL	NULL	NULL	NULL	yes	yes	yes	NULL	yes	NULL	yes	NULL	NULL
+intraop_p016	14-622_intraop	NULL	NULL	NULL	NULL	yes	yes	yes	NULL	yes	NULL	yes	NULL	NULL
+intraop_p017	14-622_intraop	NULL	NULL	NULL	NULL	yes	yes	yes	NULL	yes	NULL	yes	NULL	NULL
+maarn	14-090_children	2	NULL	3	NULL	NULL	yes	yes	NULL	yes	yes	NULL	yes	child does not want to be contacted again, parents yes
+putten	14-090_children	2	NULL	3	NULL	NULL	NULL	NULL	NULL	NULL	NULL	no	yes	CTMR cannot be used in publications! Patient cannot be contacted
+delft	14-090_children	2	NULL	3	NULL	NULL	NULL	NULL	NULL	NULL	NULL	yes	yes	150719: called, spoke to mother, she must have lost the form. Sent now by email
+meppel	14-090_children	2	NULL	3	NULL	NULL	yes	yes	NULL	yes	yes	yes	yes	NULL
+erp	14-090_children	2	NULL	3	NULL	NULL	yes	yes	NULL	yes	yes	yes	yes	clinical fMRI only
+smilde	14-090_children	2	NULL	3	NULL	NULL	NULL	NULL	NULL	NULL	NULL	yes	NULL	Child does not want updates about research, parents yes. 150719: called, they did not have the letter any more. Resent by email
+boxtel	14-090_children	2	NULL	3	NULL	NULL	no	no	NULL	no	no	yes	yes	CTMR cannot be used in publications!
+muiden	14-090_children	2	NULL	3	NULL	NULL	NULL	NULL	NULL	NULL	NULL	yes	yes	150719: called, they did not see the letter. Resent by email 
+bemmel	14-090_children	2	NULL	3	NULL	NULL	yes	yes	NULL	yes	yes	yes	yes	NULL
+zwolle	14-090_children	2	NULL	3	NULL	NULL	yes	yes	NULL	yes	yes	yes	yes	NULL
+leiden	14-090_children	3	NULL	3	NULL	NULL	yes	yes	NULL	yes	yes	yes	yes	NULL
+mierlo	14-090_children	3	NULL	3	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	yes	NULL
+zeist	14-090_children	3	NULL	3	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	yes	NULL
+elst	14-090_children	3	NULL	3	NULL	NULL	yes	yes	NULL	yes	yes	yes	yes	NULL
+sittard	14-090_children	3	NULL	3	NULL	NULL	yes	yes	NULL	yes	yes	yes	yes	NULL
+boskoop	14-090_children	3	NULL	3	NULL	NULL	yes	yes	NULL	yes	yes	yes	yes	NULL
+didam	14-090_children	4	NULL	3.1	NULL	NULL	yes	yes	yes	yes	NULL	yes	yes	NULL
+joure	14-090_children	3	NULL	3.1	NULL	NULL	yes	yes	NULL	yes	NULL	yes	yes	NULL
+jorwerd	14-090_children	5	NULL	3.1	NULL	NULL	yes	yes	yes	yes	yes	yes	yes	NULL
+oranje	14-090_children	6	NULL	NA	NULL	NULL	yes	yes	yes	yes	yes	yes	yes	NULL
+aart	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+ahma	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+alb2	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+albe	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+alhk-assen	NULL	NULL	NULL	NULL	NULL	no	no	no	NULL	no	no	no	NULL	NULL
+arno	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+bart	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+bast	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+beek	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+bleu	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+bloe	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+boe2	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+boer	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+borg	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+braa	07-260_bcipatients	NULL	NULL	NULL	2020-03-17	NULL	yes	yes	NULL	yes	yes	yes	NULL	NULL
+brem	07-260_bcipatients	NULL	NULL	NULL	NULL	yes	yes	NULL	NULL	yes	NULL	yes	NULL	NULL
+brin	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+brui	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+buij	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+cars	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+cast	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+claa	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+corp	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+dint	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+dort	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+dren	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+dulk	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	no	NULL	no reaction
+eijk-edam	NULL	NULL	NULL	NULL	NULL	no	no	no	NULL	no	no	no	NULL	NULL
+enge	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+esse	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+flui	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+folk	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	yes	NULL	yes	NULL	NULL
+gebb	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+gerr-groningen	NULL	NULL	NULL	NULL	NULL	no	no	no	NULL	no	no	no	NULL	NULL
+gerw-gastel	NULL	NULL	NULL	NULL	NULL	no	no	no	NULL	no	no	no	NULL	NULL
+giel	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	yes	yes	NULL	NULL
+gord	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+graf	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+grie	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+groe	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+groo	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+guij	07-260_bcipatients	NULL	NULL	NULL	2020-03-19	NULL	yes	yes	NULL	yes	yes	yes	NULL	NULL
+habe	07-260_bcipatients	NULL	NULL	NULL	2020-03-23	yes	yes	NULL	NULL	yes	yes	yes	NULL	NULL
+hart	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+heem	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+horo	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+hovi	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+hube	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	no	NULL	no reaction
+jan2	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+jan3	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+jans	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+joos	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+kadd	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+kars	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+kean	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+kell	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+koev	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+kooy	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+korn	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+kuit	NULL	NULL	NULL	NULL	NULL	no	no	no	NULL	no	no	no	NULL	NULL
+laan	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+maan	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+maas	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+mang	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+mans	07-260_bcipatients	NULL	NULL	NULL	2020-03-15	NULL	yes	yes	NULL	yes	yes	yes	NULL	NULL
+mars	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+mels	07-260_bcipatients	NULL	NULL	NULL	NULL	yes	yes	NULL	NULL	yes	NULL	yes	NULL	NULL
+mert	07-260_bcipatients	NULL	NULL	NULL	2020-03-14	yes	yes	yes	NULL	yes	yes	yes	NULL	NULL
+mier-malden	NULL	NULL	NULL	NULL	NULL	no	no	no	NULL	no	no	no	NULL	NULL
+mok-meerlo	NULL	NULL	NULL	NULL	NULL	no	no	no	NULL	no	no	no	NULL	NULL
+mole	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+mors	07-260_bcipatients	NULL	NULL	NULL	2020-03-17	NULL	yes	yes	NULL	yes	yes	yes	NULL	NULL
+nooi-nuil	NULL	NULL	NULL	NULL	NULL	no	no	no	NULL	no	no	no	NULL	NULL
+nouw	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+past	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+pol_	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+radj	07-260_bcipatients	NULL	NULL	NULL	2020-03-23	NULL	yes	yes	NULL	yes	yes	yes	NULL	NULL
+rahm-rhoon	NULL	NULL	NULL	NULL	NULL	no	no	no	NULL	no	no	no	NULL	NULL
+rech	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+rees	07-260_bcipatients	NULL	NULL	NULL	2020-03-24	yes	yes	yes	NULL	yes	yes	yes	NULL	NULL
+reho	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+roli	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+rooi	07-260_bcipatients	NULL	NULL	NULL	NULL	yes	yes	NULL	NULL	yes	NULL	yes	NULL	NULL
+ruit	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+seip	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+siez	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+sijm	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+simo	07-260_bcipatients	NULL	NULL	NULL	2020-03-25	NULL	yes	NULL	NULL	yes	yes	yes	NULL	NULL
+smi2	07-260_bcipatients	NULL	NULL	NULL	NULL	yes	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+smit	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+spoo	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+stok	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+terp	07-260_bcipatients	NULL	NULL	NULL	NULL	yes	yes	NULL	NULL	yes	NULL	no	NULL	no reaction
+tesf	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+thij-tytsjerk	NULL	NULL	NULL	NULL	NULL	no	no	no	NULL	no	no	no	NULL	NULL
+valk	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+veen	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+ver2	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+ver3	07-260_bcipatients	NULL	NULL	NULL	2020-03-30	NULL	yes	yes	NULL	yes	no	yes	NULL	NULL
+verh	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+vers	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+veth	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+ving	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+viss	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+vred	07-260_bcipatients	NULL	NULL	NULL	2020-03-16	NULL	yes	yes	NULL	yes	yes	yes	NULL	NULL
+wied	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+weve	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+wieg	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	yes	NULL	yes	NULL	NULL
+wolf	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	yes	NULL	NULL	NULL	NULL	yes	NULL	NULL
+yasa	07-260_bcipatients	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+zuil	07-260_bcipatients	NULL	NULL	NULL	2020-05-20	NULL	yes	yes	NULL	yes	yes	yes	NULL	NULL
