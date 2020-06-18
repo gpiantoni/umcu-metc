@@ -31,7 +31,7 @@ COLUMNS = [
     ]
 
 
-TABLES = [
+STATEMENTS = [
     """\
     CREATE TABLE subjects (
       id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -58,6 +58,24 @@ TABLES = [
       protocol_id INT NOT NULL,
       path TEXT,
       FOREIGN KEY (protocol_id) REFERENCES protocols (id) ON DELETE CASCADE)""",
+    """\
+    CREATE VIEW permissions AS
+      SELECT code,
+      informed_consent,
+      informed_consent_version,
+      signature_date,
+      agrees_to_highdensity,
+      clinical_data_for_research,
+      use_voice,
+      store_longer_than_15y,
+      data_sharing_institutes,
+      data_sharing_online,
+      can_be_contacted_again,
+      wants_update,
+      notes
+      FROM subjects
+      JOIN protocols ON subject_id = subjects.id
+      ORDER BY code""",  # TODO: sort by date, so that we can trust the results when reading multiple protocols
     ]
 
 
@@ -73,7 +91,7 @@ def main():
     db.setDatabaseName(str(db_name))
     db.open()
 
-    for t in TABLES:
+    for t in STATEMENTS:
         query = QSqlQuery(db)
         if not query.exec(dedent(t)):
             print(query.lastError().text())
