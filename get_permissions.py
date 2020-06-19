@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 
 from sys import argv
-from PyQt5.QtCore import QVariant
+from PyQt5.QtCore import (
+    QVariant,
+    QDate,
+    )
 from PyQt5.QtSql import (
     QSqlQuery,
     QSqlDatabase
@@ -27,20 +30,22 @@ def main(subject):
 
     db.setDatabaseName(str(db_name))
     db.open()
+    assert db.isOpen()
 
     output = {
-        'informed_consent': None,
-        'informed_consent_version': None,
-        'signature_date': None,
-        'agrees_to_highdensity': None,
-        'clinical_data_for_research': None,
-        'use_voice': None,
-        'store_longer_than_15y': None,
-        'data_sharing_institutes': None,
-        'data_sharing_online': None,
-        'can_be_contacted_again': None,
-        'wants_update': None,
-        'notes': None,
+        'document': [],
+        'informed_consent': [],
+        'informed_consent_version': [],
+        'signature_date': [],
+        'agrees_to_highdensity': [],
+        'clinical_data_for_research': [],
+        'use_voice': [],
+        'store_longer_than_15y': [],
+        'data_sharing_institutes': [],
+        'data_sharing_online': [],
+        'can_be_contacted_again': [],
+        'wants_update': [],
+        'notes': [],
         }
 
     query = QSqlQuery(db)
@@ -49,17 +54,41 @@ def main(subject):
     if not query.exec():
         raise SyntaxError(query.lastError().text())
 
+    i = 1
     while query.next():
         for k in output:
-            out = query.value(k)
-            if not out.isNull():
-                output[k] = out.value()
+            if k == 'document':
+                v = f'({i})'
+                i += 1
+
+            else:
+
+                out = query.value(k)
+                if out.isNull():
+                    v = '(unknown)'
+                elif isinstance(out.value(), QDate):
+                    v = out.value().toString('d MMMM yyyy')
+                else:
+                    v = out.value()
+
+            output[k].append(v)
 
     print(f'Permissions for {subject}')
-    for k, v in output.items():
-        if v is None:
-            v = '(unknown)'
-        print(f"{k.replace('_', ' '):<30} {v:>20}")
+    for k, values in output.items():
+        if k == 'notes':
+            continue
+        values_str = ''.join(f'{v:>20}' for v in values)
+        print(f"{k.replace('_', ' '):<30} {values_str}")
+
+    if len(output['notes']) > 0:
+        print('\nNOTES')
+    for i, n in zip(output['document'], output['notes']):
+        if n == '(unknown)':
+            continue
+        else:
+            print(f'{i:<10}: {n}')
+
+
 
 
 if __name__ == '__main__':
