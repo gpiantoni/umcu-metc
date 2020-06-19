@@ -1,17 +1,19 @@
 #!/usr/bin/env python3
 
-import sip
 from sys import argv
 from PyQt5.QtCore import QVariant
 from PyQt5.QtSql import (
     QSqlQuery,
     QSqlDatabase
     )
+import sip
 
 db_name = 'metc'
 username = 'giovanni'
 password = 'password'
 CONNECTION_NAME = 'metc_database'
+
+sip.enableautoconversion(QVariant, False)
 
 
 def main(subject):
@@ -41,7 +43,6 @@ def main(subject):
         'notes': None,
         }
 
-    sip.enableautoconversion(QVariant, False)
     query = QSqlQuery(db)
     query.prepare("SELECT * FROM permissions WHERE code = :code ")
     query.bindValue(':code', subject)
