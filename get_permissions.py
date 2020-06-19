@@ -56,6 +56,7 @@ def main(subject):
 
     i = 1
     while query.next():
+
         for k in output:
             if k == 'document':
                 v = f'({i})'
@@ -73,14 +74,14 @@ def main(subject):
 
             output[k].append(v)
 
-    print(f'Permissions for {subject}')
+    print(f'\nPERMISSIONS FOR {subject}\n')
     for k, values in output.items():
         if k == 'notes':
             continue
         values_str = ''.join(f'{v:>20}' for v in values)
         print(f"{k.replace('_', ' '):<30} {values_str}")
 
-    if len(output['notes']) > 0:
+    if any([n != '(unknown)' for n in output['notes']]):
         print('\nNOTES')
     for i, n in zip(output['document'], output['notes']):
         if n == '(unknown)':
@@ -88,7 +89,22 @@ def main(subject):
         else:
             print(f'{i:<10}: {n}')
 
+    query = QSqlQuery(db)
+    query.prepare("SELECT path FROM files JOIN protocols ON files.protocol_id = protocols.id JOIN subjects ON subjects.id = protocols.subject_id WHERE subjects.code = :code ")
+    query.bindValue(':code', subject)
+    if not query.exec():
+        raise SyntaxError(query.lastError().text())
 
+    files = []
+    while query.next():
+        files.append(query.value('path').value())
+
+    if len(files) > 0:
+        print('\nFILES')
+    for v in files:
+        print(f'{v}')
+
+    print('')
 
 
 if __name__ == '__main__':
