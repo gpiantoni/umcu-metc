@@ -77,7 +77,7 @@ def main(subject):
 
     for k, out in output.items():
         out.insert(0, '|')
-        if k in ('document', 'date', 'protocol', 'version'):
+        if k in ('document', 'date', 'protocol', 'version', 'type'):
             out.insert(0, '')
             continue
 
