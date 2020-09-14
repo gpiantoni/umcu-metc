@@ -34,17 +34,18 @@ def main(subject):
 
     output = {
         'document': [],
-        'informed_consent': [],
-        'informed_consent_version': [],
-        'signature_date': [],
-        'agrees_to_highdensity': [],
-        'clinical_data_for_research': [],
-        'use_voice': [],
-        'store_longer_than_15y': [],
-        'data_sharing_institutes': [],
-        'data_sharing_online': [],
-        'can_be_contacted_again': [],
-        'wants_update': [],
+        'date': [],
+        'type': [],
+        'protocol': [],
+        'version': [],
+        'HD': [],
+        'use of medical data': [],
+        'voice': [],
+        'longer than 15y': [],
+        'share with institutes': [],
+        'share online': [],
+        'further contact': [],
+        'updates': [],
         'notes': [],
         }
 
@@ -74,6 +75,18 @@ def main(subject):
 
             output[k].append(v)
 
+    for k, out in output.items():
+        out.insert(0, '|')
+        if k in ('document', 'date', 'protocol', 'version'):
+            out.insert(0, '')
+            continue
+
+        l_out = [x for x in out if x not in ('(unknown)', '', '|')]
+        if len(l_out) >= 1:
+            out.insert(0, l_out[-1])
+        else:
+            out.insert(0, '(unknown)')
+
     print(f'\nPERMISSIONS FOR {subject}\n')
     for k, values in output.items():
         if k == 'notes':
@@ -81,16 +94,8 @@ def main(subject):
         values_str = ''.join(f'{v:>20}' for v in values)
         print(f"{k.replace('_', ' '):<30} {values_str}")
 
-    if any([n != '(unknown)' for n in output['notes']]):
-        print('\nNOTES')
-    for i, n in zip(output['document'], output['notes']):
-        if n == '(unknown)':
-            continue
-        else:
-            print(f'{i:<10}: {n}')
-
     query = QSqlQuery(db)
-    query.prepare("SELECT path FROM files JOIN protocols ON files.protocol_id = protocols.id JOIN subjects ON subjects.id = protocols.subject_id WHERE subjects.code = :code ")
+    query.prepare("SELECT path FROM files JOIN interactions ON files.interaction_id = interactions.id JOIN patients ON patients.id = interactions.patient_id WHERE patients.code = :code ")
     query.bindValue(':code', subject)
     if not query.exec():
         raise SyntaxError(query.lastError().text())
