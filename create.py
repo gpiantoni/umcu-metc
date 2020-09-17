@@ -15,10 +15,6 @@ CONNECTION_NAME = 'metc_database'
 
 STATEMENTS = [
     """\
-    CREATE TABLE patients (
-      id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-      code VARCHAR(256))""",
-    """\
     CREATE TABLE experimenters (
       id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
       experimenter VARCHAR(256))""",
@@ -27,14 +23,15 @@ STATEMENTS = [
       id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
       protocol VARCHAR(256))""",
     """\
-    CREATE TABLE interactions (
+    CREATE TABLE changes (
       id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-      patient_id INT NOT NULL,
-      experimenter_id INT,
-      type ENUM ('in person', 'letter', 'email', 'phone', 'death') NOT NULL,
-      protocol_id INT,
+      code VARCHAR(256) NOT NULL,
       date DATE,
-      protocol_version TEXT,
+      type ENUM ('informed consent', 'letter', 'email', 'phone', 'unresponsive', 'death') NOT NULL,
+      period ENUM ('original', 'retrospective') NOT NULL,
+      protocol_id INT,
+      version TEXT,
+      experimenter_id INT,
       agrees_to_highdensity ENUM ('yes', 'no'),
       medical_data_for_research ENUM ('yes', 'no'),
       use_voice ENUM ('yes', 'no'),
@@ -44,14 +41,17 @@ STATEMENTS = [
       can_be_contacted_again ENUM ('yes', 'no'),
       wants_update ENUM ('yes', 'no'),
       notes TEXT,
-      FOREIGN KEY (patient_id) REFERENCES patients (id) ON DELETE CASCADE,
       FOREIGN KEY (experimenter_id) REFERENCES experimenters (id) ON DELETE CASCADE,
       FOREIGN KEY (protocol_id) REFERENCES protocols (id) ON DELETE CASCADE)""",
     """\
+    CREATE TABLE aliases (
+      person INT NOT NULL,
+      code VARCHAR(256) NOT NULL)""",
+    """\
     CREATE TABLE files (
-      interaction_id INT NOT NULL,
+      changes_id INT NOT NULL,
       path TEXT,
-      FOREIGN KEY (interaction_id) REFERENCES interactions (id) ON DELETE CASCADE)""",
+      FOREIGN KEY (changes_id) REFERENCES changes (id) ON DELETE CASCADE)""",
     """\
     INSERT INTO
         protocols (`protocol`)
@@ -75,11 +75,13 @@ STATEMENTS = [
     """\
     CREATE VIEW permissions AS
       SELECT
-      patients.code,
-      type,
+      code patient,
       date,
+      type,
+      period,
+      experimenters.experimenter experimenter,
       protocols.protocol,
-      protocol_version version,
+      version,
       agrees_to_highdensity HD,
       medical_data_for_research `use of medical data`,
       use_voice voice,
@@ -89,9 +91,9 @@ STATEMENTS = [
       can_be_contacted_again `further contact`,
       wants_update updates,
       notes
-      FROM interactions
-      LEFT JOIN patients ON patients.id = interactions.patient_id
-      LEFT JOIN protocols ON protocols.id = interactions.protocol_id
+      FROM changes
+      LEFT JOIN protocols ON protocols.id = changes.protocol_id
+      LEFT JOIN experimenters ON experimenters.id = changes.experimenter_id
       ORDER BY `code`, `date`
     """
     ]

@@ -55,6 +55,13 @@ def main():
 
 
 def add_rows(db):
+
+    insert(db, 'aliases', {'person': 1, 'code': 'guij'})
+    insert(db, 'aliases', {'person': 1, 'code': 'gennep'})
+    insert(db, 'aliases', {'person': 2, 'code': 'meppel'})
+    insert(db, 'aliases', {'person': 2, 'code': 'marrum'})
+
+    return
     """
     case 1
     clinical subject, retrospective call to use clinical data, nonWMO retrospective letter for sharing data
