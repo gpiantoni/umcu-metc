@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from pathlib import Path
 from xelo2.database.create import close_database
 from PyQt5.QtSql import (
     QSqlQuery,
@@ -51,6 +52,16 @@ def main():
 
     add_rows(db)
 
+    db.transaction()
+    try:
+        tsv_file = Path('/home/gio/projects/metc/changes_in_state_of_permissions.tsv')
+        add_row_from_file(db, tsv_file)
+    except Exception as err:
+        db.rollback()
+        raise(err)
+    else:
+        db.commit()
+
     close_database(db)
 
 
@@ -62,24 +73,32 @@ def add_rows(db):
     insert(db, 'aliases', {'person': 2, 'code': 'marrum'})
 
     return
-    """
-    case 1
-    clinical subject, retrospective call to use clinical data, nonWMO retrospective letter for sharing data
-    laan, wolf, vref, brin
-    """
-    pt_idx = insert(db, 'patients', {'code': 'laan'})
-    insert(db, 'interactions', {
-        'patient_id': pt_idx,
-        'type': 'letter',
-        'protocol_id': select(db, 'protocols', {'protocol': 'ORCHIID'}),
-        'date': '2020-08-02',
-        'protocol_version': 'C1.0 22-Jun-2020',
-        'medical_data_for_research': 'yes',
-        'use_voice': 'yes',
-        'store_longer_than_15y': 'yes',
-        'data_sharing_institutes': 'yes',
-        'data_sharing_online': 'yes',
-        })
+
+
+def add_row_from_file(db, tsv_file):
+    with tsv_file.open() as f:
+        hdr = [x.strip() for x in f.readline().split()]
+
+        for row in f:
+            val = [x.strip() for x in row.split('\t')]
+
+            keys = {}
+            for k, v in zip(hdr, val):
+                if len(v) == 0:
+                    continue
+
+                if k == 'protocol':
+                    keys['protocol_id'] = select(db, 'protocols', {'protocol': v})
+
+                elif k == 'experimenter':
+                    keys['experimenter_id'] = select(db, 'experimenters', {'experimenter': v})
+
+                else:
+                    keys[k] = v
+
+            insert(db, 'changes', keys)
+
+    return
 
     """
     case 2
