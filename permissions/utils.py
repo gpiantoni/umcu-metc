@@ -1,0 +1,5 @@
+DB_TYPE = 'QMYSQL'
+DB_NAME = 'metc'
+USERNAME = 'giovanni'
+PASSWORD = 'password'
+CONNECTION_NAME = 'metc_database'
