@@ -1,17 +1,17 @@
 from textwrap import dedent
 
 from PyQt5.QtSql import (
-    QSqlQuery,
     QSqlDatabase,
+    QSqlQuery,
     )
 
 from .utils import (
-    DB_TYPE,
+    db_open,
     DB_NAME,
-    USERNAME,
-    PASSWORD,
     CONNECTION_NAME,
     )
+
+from .api import insert
 
 
 STATEMENTS_DB = [
@@ -59,26 +59,6 @@ STATEMENTS_TABLES = [
       path TEXT,
       FOREIGN KEY (changes_id) REFERENCES changes (id) ON DELETE CASCADE)""",
     """\
-    INSERT INTO
-        protocols (`protocol`)
-    VALUES
-        ('07-260_bcipatients'),
-        ('14-090_children'),
-        ('14-420_adults'),
-        ('14-622_intraop'),
-        ('ORCHIID')
-    """,
-    """\
-    INSERT INTO
-        experimenters (`experimenter`)
-    VALUES
-        ('Mariska'),
-        ('Erik'),
-        ('Giovanni'),
-        ('Mariana'),
-        ('Elmar')
-    """,
-    """\
     CREATE VIEW permissions AS
       SELECT
       code patient,
@@ -107,26 +87,44 @@ STATEMENTS_TABLES = [
 def create_database():
     run_statements('information_schema', STATEMENTS_DB)
     run_statements(DB_NAME, STATEMENTS_TABLES)
+    insert_default_values(DB_NAME)
 
 
 def run_statements(db_name, statements):
-    db = QSqlDatabase.addDatabase(DB_TYPE, CONNECTION_NAME)
-    assert db.isValid()
 
-    db.setHostName('127.0.0.1')
-    db.setUserName(USERNAME)
-    if PASSWORD is not None:
-        db.setPassword(PASSWORD)
-
-    db.setDatabaseName(str(db_name))
-    db.open()
+    db = db_open(db_name)
 
     for t in statements:
         query = QSqlQuery(db)
         if not query.exec(dedent(t)):
             print(query.lastError().text())
 
-    db.commit()
+    db.close()
+    del db  # delete database before removing connection
+    QSqlDatabase.removeDatabase(CONNECTION_NAME)
+
+
+def insert_default_values(db_name):
+    """We can use statements, but I prefer to use python API.
+    """
+    db = db_open()
+
+    insert(db, 'protocols', {'protocol': '07-260_bcipatients'})
+    insert(db, 'protocols', {'protocol': '14-090_children'})
+    insert(db, 'protocols', {'protocol': '14-420_adults'})
+    insert(db, 'protocols', {'protocol': 'ORCHIID'})
+
+    insert(db, 'experimenters', {'experimenter': 'Mariska'})
+    insert(db, 'experimenters', {'experimenter': 'Erik'})
+    insert(db, 'experimenters', {'experimenter': 'Giovanni'})
+    insert(db, 'experimenters', {'experimenter': 'Mariana'})
+    insert(db, 'experimenters', {'experimenter': 'Elmar'})
+
+    insert(db, 'aliases', {'person': 1, 'code': 'guij'})
+    insert(db, 'aliases', {'person': 1, 'code': 'gennep'})
+    insert(db, 'aliases', {'person': 2, 'code': 'meppel'})
+    insert(db, 'aliases', {'person': 2, 'code': 'marrum'})
+
     db.close()
     del db  # delete database before removing connection
     QSqlDatabase.removeDatabase(CONNECTION_NAME)

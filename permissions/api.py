@@ -1,3 +1,5 @@
+from PyQt5.QtSql import QSqlQuery
+
 
 def select(db, table, values):
     query = QSqlQuery(db)
@@ -21,4 +23,3 @@ def insert(db, table, values):
         raise SyntaxError(query.lastError().text())
 
     return query.lastInsertId()
-
