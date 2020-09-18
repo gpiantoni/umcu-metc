@@ -1,5 +1,3 @@
-from pathlib import Path
-
 from PyQt5.QtSql import QSqlDatabase
 
 from .api import (
@@ -12,12 +10,11 @@ from .utils import (
     )
 
 
-def add_rows():
-    db = db_open()
+def add_rows(tsv_file, username=None):
+    db = db_open(username=username)
 
     db.transaction()
     try:
-        tsv_file = Path('/home/gio/projects/metc/changes_in_state_of_permissions.tsv')
         add_row_from_file(db, tsv_file)
     except Exception as err:
         db.rollback()
@@ -38,6 +35,7 @@ def add_row_from_file(db, tsv_file):
             val = [x.strip() for x in row.split('\t')]
 
             keys = {}
+            files = None
             for k, v in zip(hdr, val):
                 if len(v) == 0:
                     continue
@@ -48,9 +46,15 @@ def add_row_from_file(db, tsv_file):
                 elif k == 'experimenter':
                     keys['experimenter_id'] = select(db, 'experimenters', {'experimenter': v})
 
+                elif k == 'files':
+                    files = v
+
                 else:
                     keys[k] = v
 
-            insert(db, 'changes', keys)
-
-    return
+            change_id = insert(db, 'changes', keys)
+            if files is not None:
+                for f in files.split(';'):
+                    if len(f.strip()) == 0:  # handle case "path1;path2;"
+                        continue
+                    insert(db, 'files', {'change_id': change_id, 'path': f.strip()})

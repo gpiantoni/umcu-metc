@@ -30,8 +30,6 @@ def main(subject):
 
     db.setDatabaseName(str(db_name))
     db.open()
-    if not db.isOpen():
-        raise ValueError('could not connect to database')
 
     output = {
         'document': [],

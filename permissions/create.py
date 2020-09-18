@@ -55,9 +55,9 @@ STATEMENTS_TABLES = [
       code VARCHAR(256) NOT NULL)""",
     """\
     CREATE TABLE files (
-      changes_id INT NOT NULL,
+      change_id INT NOT NULL,
       path TEXT,
-      FOREIGN KEY (changes_id) REFERENCES changes (id) ON DELETE CASCADE)""",
+      FOREIGN KEY (change_id) REFERENCES changes (id) ON DELETE CASCADE)""",
     """\
     CREATE VIEW permissions AS
       SELECT
@@ -84,15 +84,15 @@ STATEMENTS_TABLES = [
     """
     ]
 
-def create_database():
-    run_statements('information_schema', STATEMENTS_DB)
-    run_statements(DB_NAME, STATEMENTS_TABLES)
-    insert_default_values(DB_NAME)
+def create_database(username=None):
+    run_statements('information_schema', username, STATEMENTS_DB)
+    run_statements(DB_NAME, username, STATEMENTS_TABLES)
+    insert_default_values(DB_NAME, username)
 
 
-def run_statements(db_name, statements):
+def run_statements(db_name, username, statements):
 
-    db = db_open(db_name)
+    db = db_open(db_name, username)
 
     for t in statements:
         query = QSqlQuery(db)
@@ -104,10 +104,10 @@ def run_statements(db_name, statements):
     QSqlDatabase.removeDatabase(CONNECTION_NAME)
 
 
-def insert_default_values(db_name):
+def insert_default_values(db_name, username=None):
     """We can use statements, but I prefer to use python API.
     """
-    db = db_open()
+    db = db_open(username=username)
 
     insert(db, 'protocols', {'protocol': '07-260_bcipatients'})
     insert(db, 'protocols', {'protocol': '14-090_children'})

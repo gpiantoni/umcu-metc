@@ -23,3 +23,31 @@ def insert(db, table, values):
         raise SyntaxError(query.lastError().text())
 
     return query.lastInsertId()
+
+
+def list_columns(db, table):
+    query = QSqlQuery(db)
+    query.prepare(f"DESCRIBE {table}")
+    if not query.exec():
+        raise SyntaxError(query.lastError().text())
+
+    cols = []
+    while query.next():
+        cols.append(query.value(0).value())
+
+    return cols
+
+
+def find_aliases(db, code):
+    query = QSqlQuery(db)
+    query.prepare('SELECT code FROM aliases WHERE person = (SELECT person FROM aliases WHERE code = :code) ORDER BY code')
+    query.bindValue(':code', code)
+
+    if not query.exec():
+        raise SyntaxError(query.lastError().text())
+
+    codes = []
+    while query.next():
+        codes.append(query.value('code').value())
+
+    return codes
