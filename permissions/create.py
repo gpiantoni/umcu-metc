@@ -9,6 +9,7 @@ from .utils import (
     db_open,
     DB_NAME,
     CONNECTION_NAME,
+    get_auth,
     )
 
 from .api import insert
@@ -85,14 +86,16 @@ STATEMENTS_TABLES = [
     ]
 
 def create_database(username=None):
-    run_statements('information_schema', username, STATEMENTS_DB)
-    run_statements(DB_NAME, username, STATEMENTS_TABLES)
-    insert_default_values(DB_NAME, username)
+
+    username, password = get_auth(username)
+    run_statements('information_schema', username, password, STATEMENTS_DB)
+    run_statements(DB_NAME, username, password, STATEMENTS_TABLES)
+    insert_default_values(DB_NAME, username, password)
 
 
-def run_statements(db_name, username, statements):
+def run_statements(db_name, username, password, statements):
 
-    db = db_open(db_name, username)
+    db = db_open(db_name, username, password)
 
     for t in statements:
         query = QSqlQuery(db)
@@ -104,10 +107,10 @@ def run_statements(db_name, username, statements):
     QSqlDatabase.removeDatabase(CONNECTION_NAME)
 
 
-def insert_default_values(db_name, username=None):
+def insert_default_values(db_name, username, password):
     """We can use statements, but I prefer to use python API.
     """
-    db = db_open(username=username)
+    db = db_open(username=username, password=password)
 
     insert(db, 'protocols', {'protocol': '07-260_bcipatients'})
     insert(db, 'protocols', {'protocol': '14-090_children'})
