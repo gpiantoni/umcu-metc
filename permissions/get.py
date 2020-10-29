@@ -23,7 +23,7 @@ def get(code, username=None):
 
     aliases = find_aliases(db, code)
     if len(aliases) > 1:
-        print('\nThis patient has multiple codes: ' + ', '.join(aliases))
+        print('\nThis patient participated in multiple protocols with codes: ' + ', '.join(aliases))
 
     output = get_all_changes(db, code)
     if output is None:
